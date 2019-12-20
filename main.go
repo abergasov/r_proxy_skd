@@ -16,6 +16,8 @@ func main() {
 	go app.LogMessage("Proxy server started", app.Info, []string{
 		"request proxy at " + conf.ServerUrl,
 		"delay: " + strconv.Itoa(conf.DelayTimeout),
+		"machine id: " + conf.MachineId,
+		"ip: " + conf.IPAddress,
 	})
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {

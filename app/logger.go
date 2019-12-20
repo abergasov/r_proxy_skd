@@ -15,7 +15,11 @@ func LogMessage(message string, messageType int, additionalData []string) {
 	chatId := ""
 	switch messageType {
 	case Info:
+		chatId = conf.Chat
+		break
 	case Critical:
+		chatId = conf.Chat
+		break
 	case Warning:
 		chatId = conf.Chat
 		break
