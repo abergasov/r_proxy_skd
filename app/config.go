@@ -19,8 +19,10 @@ type Config struct {
 	Version      string
 	MachineId    string
 	IPAddress    string
+	ListenPort   string
 }
 
+var connStr string
 var conf *Config
 
 func NewAppConfig() *Config {
@@ -34,6 +36,7 @@ func NewAppConfig() *Config {
 		Chat:         getEnv("CHAT_ID", ""),
 		DelayTimeout: delay,
 		Version:      "0.1",
+		ListenPort:   getEnv("LISTEN_PORT", "8080"),
 	}
 	mId, err := machineID()
 	if err != nil {
